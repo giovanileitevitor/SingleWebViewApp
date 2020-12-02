@@ -1,0 +1,21 @@
+<html>
+<header>
+    <script type="text/javascript">
+        function showAndroidToast(s, t, u){
+            window.testing.showToast(s, t, u);
+        }
+    </script>
+</header>
+<body>
+<H1>Single Form with HTML page</H1>
+<form name="singleForm">
+    Name: <input type="text" name="txtName"/><br>
+    Age: <input type="text" name="txtAge"/><br>
+    BankName: <input type="text" name="txtBankName"/><br>
+
+    <input type="button"
+           onclick="showAndroidToast(txtName.value, txtAge.value, txtBankName.value);"
+           value="SEND">
+</form>
+</body>
+</html>
