@@ -14,28 +14,27 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //webView.loadUrl("https://www.google.com")
+        webView.loadUrl("file:///android_asset/webview.html")
         webView.settings.javaScriptEnabled = true
         webView.addJavascriptInterface(this, "testing")
-        webView.loadUrl("file:///android_asset/webview.html")
-//        webView.webViewClient = object : WebViewClient(){
-//            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-//                view.loadUrl(url)
-//                return false
-//            }
-//
-//            @TargetApi(Build.VERSION_CODES.N)
-//            override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
-//                view.loadUrl(request.url.toString())
-//                return false
-//            }
-//        }
+
+        webView.webViewClient = object : WebViewClient(){
+            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                view.loadUrl(url)
+                return false
+            }
+
+            @TargetApi(Build.VERSION_CODES.N)
+            override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+                view.loadUrl(request.url.toString())
+                return false
+            }
+        }
     }
 
     @JavascriptInterface
