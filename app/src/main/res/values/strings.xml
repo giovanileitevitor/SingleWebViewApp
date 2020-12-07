@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">WebView App + JavaScript</string>
+    <string name="app_name">SingleWebViewApp</string>
+    <string name="loading_text">Aguarde...</string>
 </resources>

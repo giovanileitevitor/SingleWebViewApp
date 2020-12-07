@@ -19,8 +19,17 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ENVIRONMENT_BASE_URL", "\"https://www.bradesco.com.br/\""
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            buildConfigField "String", "ENVIRONMENT_BASE_URL", "\"https://www.google.com.br/\""
         }
     }
     compileOptions {

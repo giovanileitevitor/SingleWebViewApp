@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#CD072F</color>
+    <color name="colorAccent">#CD072F</color>
+    <color name="ico_drawer">#CD072F</color>
+    <color name="DEFAULT_COLOR_34000000">#34000000</color>
+    <color name="DEFAULT_COLOR_272727">#272727</color>
+    <color name="background_rounded_white">#34000000</color>
 </resources>
