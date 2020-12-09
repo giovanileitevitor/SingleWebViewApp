@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        webView.loadUrl("file:///android_asset/webview.html")
+        webView.loadUrl("file:///android_asset/graphics.html")
         webView.settings.javaScriptEnabled = true
         webView.addJavascriptInterface(this, "testing")
 
