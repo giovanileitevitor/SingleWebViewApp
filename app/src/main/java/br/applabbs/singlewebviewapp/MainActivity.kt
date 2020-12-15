@@ -19,10 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        webView.loadUrl("file:///android_asset/graphics.html")
         webView.settings.javaScriptEnabled = true
         webView.addJavascriptInterface(this, "testing")
-
+        webView.loadUrl("file:///android_asset/graphics.html")
         webView.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                 view.loadUrl(url)
