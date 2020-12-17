@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WebView App + JavaScript Interaction</string>
+
+    <!-- Selector Screen   -->
+
+
+    <!-- Main Screen   -->
+    <string name="main_activity_toolbar_title">Bradesco PDPJ</string>
 </resources>

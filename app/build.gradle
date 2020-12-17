@@ -13,20 +13,31 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "Environment", "\"Prod\""
+        }
+
+        debug{
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            buildConfigField "String", "Environment", "\"Tu\""
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -42,4 +53,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+//    implementation(name: "card.io-5.4.4", ext: "aar")
+//    implementation(name: "scopus-mobileToken-3.1.1", ext: "aar")
 }
