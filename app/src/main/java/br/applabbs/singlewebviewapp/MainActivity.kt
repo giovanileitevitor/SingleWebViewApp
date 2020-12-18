@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    //private val url = "https://mei.bradesco/pdpj-fed-mei-web/"
     private val urlEnvironment by lazy { intent?.getStringExtra(URL_ENVIRONMENT) }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.title = urlEnvironment
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        //setTitle(urlEnvironment)
         setUpWebView()
     }
 
@@ -55,11 +53,9 @@ class MainActivity : AppCompatActivity() {
         settings.setAppCacheEnabled(true)
         settings.cacheMode = WebSettings.LOAD_DEFAULT
         settings.setAppCachePath(cacheDir.path)
-
         settings.setSupportZoom(false)
         settings.builtInZoomControls = false
         settings.displayZoomControls = false
-
         settings.textZoom = 100
         settings.blockNetworkImage = false
         settings.loadsImagesAutomatically = true
@@ -102,14 +98,7 @@ class MainActivity : AppCompatActivity() {
                 super.onPageStarted(view, url, favicon)
                 loading.visibility = VISIBLE
             }
-
-            override fun onLoadResource(view: WebView, url: String) {
-                super.onLoadResource(view, url)
-
-            }
-
         }
         webView.loadUrl(urlEnvironment);
-
     }
 }
