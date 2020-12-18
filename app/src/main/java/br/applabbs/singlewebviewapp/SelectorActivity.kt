@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.applabbs.singlewebviewapp.Constants.URL_ENVIRONMENT
 import kotlinx.android.synthetic.main.selector_activity.*
 
 class SelectorActivity : AppCompatActivity() {
@@ -29,14 +30,16 @@ class SelectorActivity : AppCompatActivity() {
             val selectedOption: Int = rb_group.checkedRadioButtonId
             radioButton = findViewById(selectedOption)
             Toast.makeText(this, "Ambiente: ${radioButton.text} :\n ${edt_ur.text}", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(URL_ENVIRONMENT, edt_ur.text.toString())
+            startActivity(intent)
         }
 
         rb_group.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId){
-                R.id.rb_prod ->  { edt_ur.setText("https://bradescoempresas.com.br/prod")  }
-                R.id.rb_tu   ->  { edt_ur.setText("https://bradescoempresas.com.br/tu")   }
-                R.id.rb_dev  ->  { edt_ur.setText("https://bradescoempresas.com.br/dev")   }
+                R.id.rb_prod ->  { edt_ur.setText("https://mei.bradesco/pdpj-fed-mei-web/")  }
+                R.id.rb_tu   ->  { edt_ur.setText("https://bancoitau.com.br")   }
+                R.id.rb_dev  ->  { edt_ur.setText("https://bancodobrasil.com.br")   }
             }
         }
     }

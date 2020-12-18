@@ -1,6 +1,7 @@
 package br.applabbs.singlewebviewapp
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -12,18 +13,23 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.applabbs.singlewebviewapp.Constants.URL_ENVIRONMENT
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    private val url = "https://mei.bradesco/pdpj-fed-mei-web/"
+    //private val url = "https://mei.bradesco/pdpj-fed-mei-web/"
+    private val urlEnvironment by lazy { intent?.getStringExtra(URL_ENVIRONMENT) }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        supportActionBar?.title = urlEnvironment
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        //setTitle(urlEnvironment)
         setUpWebView()
     }
 
@@ -43,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun setUpWebView(){
-        loading.visibility = VISIBLE
         val webView = findViewById<WebView>(R.id.webView)
         val settings = webView.settings
         settings.javaScriptEnabled = true
@@ -88,13 +93,23 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
-            override fun onLoadResource(view: WebView, url: String) {
-                super.onLoadResource(view, url)
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
                 loading.visibility = INVISIBLE
             }
 
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+                loading.visibility = VISIBLE
+            }
+
+            override fun onLoadResource(view: WebView, url: String) {
+                super.onLoadResource(view, url)
+
+            }
+
         }
-        webView.loadUrl(url);
+        webView.loadUrl(urlEnvironment);
 
     }
 }
