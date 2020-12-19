@@ -16,13 +16,14 @@ class SelectorActivity : AppCompatActivity() {
     }
 
     private fun initView(){
-        //Load primary environment at Bradesco Network
+        //Load default environment at Bradesco Network (prod)
         edt_ur.setText("https://mei.bradesco/pdpj-fed-mei-web/")
+        edt_version.setText(BuildConfig.VERSION_CODE.toString())
     }
 
     private fun initListeners(){
         //Set radioGroup onChecked Event
-        rb_group.setOnCheckedChangeListener { group, checkedId ->
+        rb_group.setOnCheckedChangeListener { _, checkedId ->
             when(checkedId){
                 R.id.rb_prod ->  { edt_ur.setText("https://mei.bradesco/pdpj-fed-mei-web/")}
                 R.id.rb_tu   ->  { edt_ur.setText("https://www.bradesco.com.br/consorcios")}
