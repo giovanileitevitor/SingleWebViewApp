@@ -31,12 +31,6 @@ class MainActivity : AppCompatActivity() {
         setUpWebView()
     }
 
-
-    @JavascriptInterface
-    fun showToast(s: String, t: String, u: String){
-        Toast.makeText(this, "Name: $s | Age: $t | BankName: $u", Toast.LENGTH_SHORT).show()
-    }
-
     override fun onBackPressed() {
         if(webView.canGoBack()){
             webView.goBack()

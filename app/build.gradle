@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+    useLibrary "org.apache.http.legacy"
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
@@ -19,7 +20,7 @@ android {
 
         defaultConfig {
             applicationId "br.applabbs.singlewebviewapp"
-            minSdkVersion 24
+            minSdkVersion 23
             targetSdkVersion 29
             versionCode code
             versionName "1.0.0"
@@ -48,12 +49,23 @@ android {
     }
 
     compileOptions {
+        encoding "UTF-8"
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude "META-INF/DEPENDENCIES"
+        exclude "META-INF/NOTICE"
+        exclude "META-INF/LICENSE"
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 }
 
@@ -68,6 +80,13 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-//    implementation(name: "card.io-5.4.4", ext: "aar")
-//    implementation(name: "scopus-mobileToken-3.1.1", ext: "aar")
+    // Abertura de Contas
+    //implementation(name: "imageconverter", ext: "aar")
+    //implementation(name: "dsphoto-2.6.3", ext: "aar")
+
+    //Testing Libraries
+    testImplementation 'org.awaitility:awaitility:4.0.1'
+    testImplementation 'org.mockito:mockito-core:2.8.9'
+    androidTestImplementation 'org.mockito:mockito-core:2.8.9'
+    androidTestImplementation 'com.google.dexmaker:dexmaker-mockito:1.2'
 }
