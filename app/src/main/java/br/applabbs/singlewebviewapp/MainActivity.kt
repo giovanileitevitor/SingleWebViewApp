@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
+import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient

@@ -28,6 +28,7 @@ class SplashActivity: AppCompatActivity() {
         if(isOnline()){
             val intent = Intent(this, SelectorActivity::class.java)
             startActivity(intent)
+            finish()
         }else {
             Toast.makeText(this, "Connection not available", Toast.LENGTH_SHORT).show()
         }
