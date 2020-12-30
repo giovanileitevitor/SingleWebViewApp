@@ -70,4 +70,10 @@ dependencies {
 
 //    implementation(name: "card.io-5.4.4", ext: "aar")
 //    implementation(name: "scopus-mobileToken-3.1.1", ext: "aar")
+
+    //Koin
+    implementation 'org.koin:koin-core:2.1.5'
+
+    //MultiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
