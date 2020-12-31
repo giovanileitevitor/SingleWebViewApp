@@ -1,6 +1,5 @@
 package br.applabbs.singlewebviewapp
 
-import android.net.ConnectivityManager
 import org.koin.core.KoinComponent
 import androidx.multidex.MultiDexApplication
 
