@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.applabbs.singlewebviewapp.Constants.URL_ENVIRONMENT
+import br.applabbs.singlewebviewapp.ui.main.MainActivity
 import kotlinx.android.synthetic.main.selector_activity.*
 
 class SelectorActivity : AppCompatActivity() {

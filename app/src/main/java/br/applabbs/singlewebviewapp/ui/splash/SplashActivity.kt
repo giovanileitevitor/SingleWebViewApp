@@ -1,18 +1,15 @@
-package br.applabbs.singlewebviewapp
+package br.applabbs.singlewebviewapp.ui.splash
 
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import br.applabbs.singlewebviewapp.ui.splash.SplashViewModel
+import br.applabbs.singlewebviewapp.SelectorActivity
 import br.applabbs.singlewebviewapp.utis.PermissionUtils
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SplashActivity: AppCompatActivity() {
+class SplashActivity: Activity() {
 
     private val PERMISSION_GLOBAL_CODE = 204
     private val viewModel: SplashViewModel by inject()

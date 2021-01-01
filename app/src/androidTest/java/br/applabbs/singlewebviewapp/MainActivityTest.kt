@@ -1,10 +1,9 @@
 package br.applabbs.singlewebviewapp
 
 import android.webkit.WebView
-import junit.framework.TestCase
+import br.applabbs.singlewebviewapp.ui.main.MainActivity
 import org.junit.Test
 import org.junit.Assert.*
-import org.mockito.MockitoAnnotations
 
 class MainActivityTest {
 

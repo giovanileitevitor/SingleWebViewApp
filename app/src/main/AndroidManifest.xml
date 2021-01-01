@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
-        android:name=".Application"
+        android:name=".di.Application"
         android:allowBackup="true"
         android:icon="@drawable/icon_app"
         android:label="@string/app_name"
@@ -17,15 +17,14 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity
-            android:name=".SplashActivity"
-            android:launchMode="singleTask"
+            android:name=".ui.splash.SplashActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -33,10 +32,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".SelectorActivity"
+            android:label="@string/main_activity_toolbar_title" />
 
         <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTask"
+            android:name=".ui.main.MainActivity"
             android:screenOrientation="portrait"
             android:label="@string/main_activity_toolbar_title">
             <intent-filter>
@@ -46,9 +47,6 @@
 
         </activity>
 
-        <activity
-            android:name=".SelectorActivity"
-            android:label="@string/main_activity_toolbar_title"/>
 
     </application>
 

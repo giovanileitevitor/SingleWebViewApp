@@ -1,4 +1,4 @@
-package br.applabbs.singlewebviewapp
+package br.applabbs.singlewebviewapp.ui.main
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -7,12 +7,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
-import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import br.applabbs.singlewebviewapp.Constants.URL_ENVIRONMENT
+import br.applabbs.singlewebviewapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
